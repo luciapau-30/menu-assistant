@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Piece of Mind</title><link rel="stylesheet" href="/app/style.css">
+  <script src="/app/app.js" defer></script>
+</head>
+<body>
+<header><a href="/app/" class="brand">Piece of Mind <span>Food that fits you.</span></a><button id="logout" class="secondary" hidden>Log out</button></header>
+<main>
+  <div class="intro"><p class="eyebrow">A LITTLE CLARITY BEFORE YOU ORDER</p><h1>Know what’s on the menu.<br>Find what fits you.</h1><p>Review ingredients against your dietary needs, with clear explanations of what we know and what still needs checking.</p></div>
+  <p id="message" role="status" aria-live="polite"></p>
+  <section id="account" class="card"><h2>Start with your account</h2><form id="auth-form">
+    <label>Name <input id="name" autocomplete="name" placeholder="For new accounts"></label>
+    <label>Email <input id="email" type="email" autocomplete="email" required></label>
+    <label>Password <input id="password" type="password" autocomplete="current-password" required></label>
+    <div class="actions"><button type="submit" value="login">Log in</button><button type="submit" value="register" class="secondary">Create account</button></div>
+  </form></section>
+  <div id="workspace" hidden>
+    <section class="card"><p class="eyebrow">01 / YOUR NEEDS</p><h2>Your dietary profile</h2><form id="profile-form"><div id="profile-options" class="grid"></div><p class="hint">Select every option that applies, or “None”. Dietary styles are saved but cannot yet be scored.</p><button>Save profile</button></form></section>
+    <section class="card"><p class="eyebrow">02 / YOUR MENU</p><h2>Upload a menu or label</h2><form id="upload-form">
+      <label>Image type <select id="image-type"><option value="MENU">Restaurant menu</option><option value="INGREDIENT_LIST">Ingredient list</option><option value="NUTRITION_LABEL">Nutrition label</option></select></label>
+      <label>Image <input id="image" type="file" accept="image/png,image/jpeg,image/webp" required></label><p class="hint">PNG, JPEG, or WebP · up to 4 MiB. Nutrition labels need an ingredient list to assess compatibility.</p>
+      <button>Upload and read image</button>
+    </form><details><summary>Open a saved analysis</summary><form id="load-form" class="actions"><label>Analysis number <input id="saved-id" type="number" min="1" required></label><button class="secondary">Open</button></form></details></section>
+    <section id="review" class="card" hidden><p class="eyebrow">03 / CHECK THE DETAILS</p><h2>Review your ingredients</h2><p>Image reading can miss details. Correct each item using the menu or information from the restaurant. Only explicitly listed ingredients are extracted; a dish name alone is not a complete ingredient list.</p><p id="analysis-number" class="hint"></p><div id="extraction-warnings"></div><form id="report-form"><div id="items"></div><div class="actions"><button id="add-item" type="button" class="secondary">Add item</button><button id="retry" type="button" class="secondary">Read image again</button><button>Generate reports</button></div></form></section>
+    <section id="results" hidden><p class="eyebrow">04 / YOUR RESULTS</p><h2>Your compatibility reports</h2><p>Scores describe the ingredients you reviewed, not a guarantee of safety. Hidden ingredients and preparation practices need confirmation with the restaurant.</p><div id="reports" class="grid"></div></section>
+  </div>
+</main><footer>Compatibility over judgment.</footer>
+</body></html>

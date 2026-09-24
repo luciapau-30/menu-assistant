@@ -1,0 +1,73 @@
+{
+  "mode": "live",
+  "model": "qwen/qwen3.8-27b",
+  "prompt_version": "menu-extraction-v1",
+  "cases": [
+    {
+      "id": "explicit_menu",
+      "valid_output": true,
+      "prediction": {
+        "items": [
+          {
+            "name": "Garden Bowl",
+            "ingredients": [
+              "rice",
+              "chickpeas",
+              "spinach"
+            ],
+            "source_text": "Garden Bowl\nIngredients: rice, chickpeas, spinach"
+          },
+          {
+            "name": "Peanut Noodles",
+            "ingredients": [
+              "noodles",
+              "peanuts",
+              "soy sauce"
+            ],
+            "source_text": "Peanut Noodles\nIngredients: noodles, peanuts, soy sauce"
+          }
+        ],
+        "warnings": []
+      },
+      "exact_match": true,
+      "ingredient_precision": 1.0,
+      "ingredient_recall": 1.0,
+      "invented_ingredients": [],
+      "missing_items": [],
+      "extra_items": [],
+      "latency_seconds": 0.912,
+      "usage": {
+        "queue_time": 0.084899896,
+        "prompt_tokens": 968,
+        "prompt_time": 0.070565352,
+        "completion_tokens": 157,
+        "completion_time": 0.29875597,
+        "total_tokens": 1125,
+        "total_time": 0.369321322
+      },
+      "estimated_cost_usd": null
+    },
+    {
+      "id": "names_only",
+      "valid_output": false,
+      "error_type": "ExtractionError",
+      "cause_type": "HTTPStatusError",
+      "http_status": 429,
+      "latency_seconds": 0.328,
+      "usage": null,
+      "estimated_cost_usd": null
+    },
+    {
+      "id": "ingredient_label",
+      "valid_output": false,
+      "error_type": "ExtractionError",
+      "cause_type": "HTTPStatusError",
+      "http_status": 429,
+      "latency_seconds": 0.145,
+      "usage": null,
+      "estimated_cost_usd": null
+    }
+  ],
+  "valid_output_rate": 0.3333333333333333,
+  "exact_match_rate": 0.3333333333333333
+}

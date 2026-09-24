@@ -216,3 +216,6 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Piece of Mind - locally stored uploaded images
+backend/app/uploads/

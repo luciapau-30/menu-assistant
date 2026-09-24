@@ -1,0 +1,5 @@
+[
+  {"id":"explicit_menu","image":"images/explicit_menu.png","type":"MENU","expected":{"items":[{"name":"Garden Bowl","ingredients":["rice","chickpeas","spinach"]},{"name":"Peanut Noodles","ingredients":["noodles","peanuts","soy sauce"]}]}},
+  {"id":"names_only","image":"images/names_only.png","type":"MENU","expected":{"items":[{"name":"House Burger","ingredients":[]},{"name":"Chef's Soup","ingredients":[]}]}},
+  {"id":"ingredient_label","image":"images/ingredient_label.png","type":"INGREDIENT_LIST","expected":{"items":[{"name":"Oat Bites","ingredients":["oats","honey","peanuts","salt"]}]}}
+]
