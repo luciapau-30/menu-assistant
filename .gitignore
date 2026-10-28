@@ -219,3 +219,6 @@ __marimo__/
 
 # Piece of Mind - locally stored uploaded images
 backend/app/uploads/
+
+# macOS
+.DS_Store
